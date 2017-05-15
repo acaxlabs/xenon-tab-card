@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="import" href="../../polymer/polymer.html"/>
+        <link rel="import" href="../../xenon-layout/xenon-section.html"/>
+        <link rel="import" href="../../xenon-tab-card/xenon-tab-card.html"/>
+        <link rel="import" href="../../paper-tabs/paper-tabs.html"/>
+        <link rel="import" href="../../paper-tabs/paper-tab.html"/>
+        <style is="custom-style">
+            html, body { margin: 0px; padding: 0px; font-family: "Roboto", Arial, Helvetica, sans-serif }
+            :root { --xenon-layout-background-color:#3e5b43; }
+        </style>
+    </head>
+    <body>
+        <xenon-section>
+            <xenon-tab-card heading="Ancillary Quote"> 
+                <tabs>
+                    <paper-tabs selected="0" scrollable fit-container style="background-color:rgbxa(0,0,0,.1);">
+                        <paper-tab>Short Term</paper-tab>
+                        <paper-tab>Accident</paper-tab>
+                        <paper-tab>Cancer/Heart</paper-tab>
+                        <paper-tab>Critical Illness</paper-tab>
+                        <paper-tab>Dental</paper-tab>
+                        <paper-tab>Blended</paper-tab>
+                    </paper-tabs>
+                </tabs>
+                <sections id="sections">
+                    <div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed velit nec dolor vehicula fringilla. Maecenas viverra iaculis vestibulum. Mauris purus urna, consequat vitae ultrices ut, facilisis at lacus. Morbi elit quam, eleifend et dictum quis, condimentum a eros. In quis augue vitae diam ultricies efficitur eu vitae augue. Suspendisse lacinia condimentum egestas. Aenean eget nisi at leo tristique facilisis.
+                    </div>
+                    <div>
+                        Donec dictum ante id ex finibus interdum. Etiam egestas magna a dui elementum sodales. Sed sit amet justo turpis. Morbi in mollis ipsum. Suspendisse imperdiet tellus vitae ligula rutrum aliquam. Nullam viverra fringilla leo at efficitur. Etiam in rutrum velit. In accumsan ullamcorper laoreet. In molestie porttitor turpis. Praesent rhoncus lectus et diam consequat suscipit. Donec vel ornare nisl. Nullam eu sapien gravida, laoreet tortor sed, molestie dolor. Proin sed lectus ut nibh condimentum tincidunt. Maecenas eu quam vel leo aliquam hendrerit.
+                    </div>
+                    <div>
+                        Fusce iaculis lectus vitae nibh commodo, in eleifend lectus laoreet. Vivamus porta odio sit amet ipsum semper tincidunt. Nam magna metus, fringilla id erat a, iaculis lacinia felis. Sed placerat, justo sed sodales vulputate, ex elit sagittis ligula, sed ultrices diam odio vitae sem. Vivamus justo nisi, egestas in hendrerit vel, blandit sit amet arcu. Nunc commodo a quam non sagittis. Duis fringilla convallis maximus. Cras eleifend lectus bibendum ligula ornare, a finibus metus suscipit. Ut porttitor lacinia mi ac fermentum. Aenean aliquam enim a tellus cursus fringilla.
+                    </div>
+                </sections>
+                <buttons><spacer></spacer>blah</buttons>
+            </xenon-tab-card>
+        </xenon-section>
+    </body>
+</html>

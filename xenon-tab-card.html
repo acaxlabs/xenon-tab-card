@@ -1,6 +1,4 @@
 <link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="../paper-tabs/paper-tabs.html"/>
-<link rel="import" href="../paper-tabs/paper-tab.html"/>
 <dom-module id="xenon-tab-card">
     <template>
         <style>
@@ -8,15 +6,15 @@
             :host #heading { font-size: 18pt; padding:16 16 16 16; @apply(--paper-card-header-text); }
             :host #frame { flex: 1 1 600px; }
             #headingarea { background-color: var(--primary-color,slategray); color: var(--text-primary-color, white);}
-            #body ::content p { margin: 0px; }
-            #body ::content p:not(:last-child) { margin-bottom: 20px; }
             #footer  { padding-left:8px; padding-right:8px; padding-bottom: 8px; }
             #footer ::content buttons { display:flex; align-items:center; padding:8px; }
             #footer ::content buttons * { flex:0 0 auto; margin:0px; font-size: small; }
             #footer ::content buttons *:not(:last-child) { margin-right:8px; }
             #footer ::content buttons spacer { flex: 1 1 auto; }
             #actionarea ::content actions { color: gray; cursor:pointer; }
-            #body { padding: 16px; }
+            #sections ::content  { padding: 16px; }
+            #sections ::content sections { display:flex; flex-wrap: wrap; overflow:hidden; margin: 0 -16 0 -16; }
+            #sections ::content sections div { flex: 1 0 260px; border-right: solid 1px gainsboro; padding: 0 16 0 24; margin: 0 -4 16 -4; }
         </style>
         <div id="frame">
             <div id="headingarea" hidden>
@@ -29,8 +27,8 @@
                 <content id="tabs" select="tabs"></content>
                 </div>
             </div>
-            <div id="body">
-                <content select="main"></content>
+            <div id="sections">
+                <content select="sections"></content>
             </div>
             <div id="footer" hidden>
                 <content id="buttons" select="buttons"></content>
