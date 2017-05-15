@@ -1,0 +1,56 @@
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="../paper-tabs/paper-tabs.html"/>
+<link rel="import" href="../paper-tabs/paper-tab.html"/>
+<dom-module id="xenon-tab-card">
+    <template>
+        <style>
+            :host { display: flex; box-shadow: 0px 1px 3px #888888; border-radius: 2px; background-color:#ffffff; }
+            :host #heading { font-size: 18pt; padding:16 16 16 16; @apply(--paper-card-header-text); }
+            :host #frame { flex: 1 1 600px; }
+            #headingarea { background-color: var(--primary-color,slategray); color: var(--text-primary-color, white);}
+            #body ::content p { margin: 0px; }
+            #body ::content p:not(:last-child) { margin-bottom: 20px; }
+            #footer  { padding-left:8px; padding-right:8px; padding-bottom: 8px; }
+            #footer ::content buttons { display:flex; align-items:center; padding:8px; }
+            #footer ::content buttons * { flex:0 0 auto; margin:0px; font-size: small; }
+            #footer ::content buttons *:not(:last-child) { margin-right:8px; }
+            #footer ::content buttons spacer { flex: 1 1 auto; }
+            #actionarea ::content actions { color: gray; cursor:pointer; }
+            #body { padding: 16px; }
+        </style>
+        <div id="frame">
+            <div id="headingarea" hidden>
+                <div id="heading">
+                    <div>{{heading}}</div>
+                    <div style="flex:1 1 auto"></div>
+                    <div id="actionarea"><content select="actions"></content></div>
+                </div>
+                <div>
+                <content id="tabs" select="tabs"></content>
+                </div>
+            </div>
+            <div id="body">
+                <content select="main"></content>
+            </div>
+            <div id="footer" hidden>
+                <content id="buttons" select="buttons"></content>
+            </div>
+        </div>
+    </template>
+    <script>
+    Polymer({
+        is:"xenon-tab-card", 
+        properties: {
+            /* Sets a heading for the card. This heading will have appropriate style. */
+            heading: { type: String, observer: "_headingChange" }
+        }, 
+        ready: function() {
+            var buttons = Polymer.dom(this.$.buttons).getDistributedNodes();
+            if(buttons.length > 0) this.$.footer.hidden = false; 
+        },
+        _headingChange: function() {
+            this.$.headingarea.hidden = this.heading == null || this.heading == '' || this.heading == undefined;
+        },
+    });
+    </script>
+</dom-module>
